@@ -4,11 +4,62 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BEFAST Healthcare</title>
+  <!-- Standard Favicons -->
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+
+  <!-- ICO File -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <!-- Android / PWA -->
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+
   <style>
     /* ---------- GLOBAL RESPONSIVE FIXES ---------- */
 
 * {
   box-sizing: border-box;
+}
+/* LOGO ALIGNMENT FIX */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;        /* spacing between image and text */
+}
+
+.logo-img {
+  height: 55px;     /* adjust as needed */
+  width: auto;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0a9396;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .logo-container {
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav a {
+    margin: 10px;
+  }
 }
 
 img, video {
@@ -131,6 +182,35 @@ footer {
     font-size: 26px;
   }
 }
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.whatsapp-icon {
+  width: 35px;
+  height: 35px;
+}
+
 
 /* ---------- SMALL MOBILE (max-width: 480px) ---------- */
 
@@ -181,7 +261,7 @@ footer {
     .testimonial { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); font-size: 15px; }
     .testimonial footer { margin-top: 10px; color: #475569; font-size: 14px; }
 
-    .contact-box { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); max-width: 600px; margin-top: 20px; }
+    .contact-box { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-top: 20px; }
     .contact-box input, .contact-box textarea { width: 100%; padding: 10px; margin-top: 10px; border-radius: 6px; border: 1px solid #ccc; }
     .contact-box button { margin-top: 15px; padding: 12px 20px; background: #0a9396; border: none; color: #fff; border-radius: 6px; cursor: pointer; }
 
@@ -206,7 +286,11 @@ footer {
 <body style="animation: fadeIn 0.8s ease;">
 
 <header>
-  <div class="logo">BEFAST Healthcare</div>
+  <div class="logo-container">
+    <img src="./logo.jpg" alt="BEFAST Logo" class="logo-img">
+    <span class="logo-text">BEFAST HEALTHCARE</span>
+  </div>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#services">Services</a>
@@ -214,6 +298,7 @@ footer {
     <a href="#contact">Contact</a>
   </nav>
 </header>
+
 <section class="hero" id="home">
   <div class="hero-text">
     <h1>BEFAST Healthcare Consultancy Services</h1>
@@ -228,7 +313,7 @@ footer {
   </div>
 
   <div class="hero-img" style="background:none; padding:0; display:flex; justify-content:center; align-items:center;">
-    <img src="./WhatsApp Image 2025-11-15 at 20.32.36_9a0c8a5e.jpg" alt="Healthcare Global Vision" style="width: 80%; height: 80%; object-fit:contain; border-radius: 10px;" />
+    <img src="./WhatsApp Image 2025-11-15 at 20.32.36_9a0c8a5e.jpg" alt="Healthcare Global Vision" style="width: 100%; height: 100%; object-fit:fill; border-radius: 10px;" />
   </div>
 </section>
 <section class="section" id="about">
@@ -237,13 +322,13 @@ footer {
 
   <div class="services" style="margin-top:30px;">
     <div class="service-card">
-      <h3>🌍 Vision</h3>
-      <p>To be the most trusted healthcare consultancy that strengthens healthcare systems through innovation, education, and collaboration — ensuring accessible and affordable care for every individual.</p>
+      <h3>Vision</h3>
+      <p style="text-align: justify; font-size: 16px;">To be the most trusted healthcare consultancy that strengthens healthcare systems through innovation, education, and collaboration — ensuring accessible and affordable care for every individual.</p>
     </div>
 
     <div class="service-card">
-      <h3>🎯 Mission</h3>
-      <ul style="padding-left:18px; line-height:1.6; color:#475569;">
+      <h3>Mission</h3>
+      <ul style="padding-left:18px; line-height:1.6; color:#475569; text-align: justify;">
         <li>Deliver evidence-based and innovative consultancy for sustainable health system excellence.</li>
         <li>Design patient-focused and affordable healthcare models.</li>
         <li>Empower professionals through education, training, and capacity building.</li>
@@ -254,8 +339,8 @@ footer {
     </div>
 
     <div class="service-card">
-      <h3>🛠️ Core Services</h3>
-      <ul style="padding-left:18px; line-height:1.6; color:#475569;">
+      <h3>Core Services</h3>
+      <ul style="padding-left:18px; line-height:1.6; color:#475569; text-align: justify;">
         <li>Healthcare Strategy & Emergency Consultancy</li>
         <li>Education & Training for Healthcare Leaders</li>
         <li>Healthcare Research & Innovation Support</li>
@@ -268,8 +353,8 @@ footer {
     </div>
 
     <div class="service-card">
-      <h3>💙 Core Values</h3>
-      <ul style="padding-left:18px; line-height:1.6; color:#475569;">
+      <h3>Core Values</h3>
+      <ul style="padding-left:18px; line-height:1.6; color:#475569; text-align: justify;">
         <li><strong>Integrity:</strong> Transparent & ethical practices.</li>
         <li><strong>Excellence:</strong> Delivering disease‑specific consultancy.</li>
         <li><strong>Innovation:</strong> Modern methods & technologies.</li>
@@ -281,7 +366,7 @@ footer {
   </div>
 
   <div class="service-card" style="margin-top:30px;">
-    <h3>📌 Special Note</h3>
+    <h3>Special Note</h3>
     <p>BEFAST Healthcare Consultancy Services places strong emphasis on education, research, and strategic collaboration with government bodies. We are committed to building affordable, scalable, and sustainable healthcare systems that create a lasting impact across communities.</p>
   </div>
 </section>
@@ -289,12 +374,12 @@ footer {
 <section class="section" id="video-banner" style="margin: top 5px;height:fit-content; text-align:center;">
   <h2>Our Vision in Action</h2>
   <p>Transforming healthcare through innovation, education, and strategic collaboration.</p>
-  <img src="./WhatsApp Image 2025-11-15 at 20.32.37_55ca479b.jpg" style="width: 80%; height: 600px;; object-fit:fill; border-radius: 20px;"/>
+  <img src="./vission.jpg" style="width: 50%; height: 350px;; object-fit:fill; border-radius: 20px;"/>
 </section>
 
 <section class="section" id="services">
   <h2 style="text-align: center;">Our Home Nursing Services</h2>
-  <img src="./WhatsApp Image 2025-11-15 at 20.32.36_e6193c36.jpg" alt="Digital Health" style="width:80%;height: 500px;text-align: center ; margin-top:20px; border-radius:12px;">
+  <img src="./houseNursing.jpg" alt="Digital Health" style="width:50%;height: 350px;text-align: center ; margin-top:20px; border-radius:12px;">
   <p style="font-size: 20px; font-style:oblique;">Trusted, compassionate and professional care at your doorstep.</p>
   <div class="services">
     <div class="service-card">
@@ -324,34 +409,6 @@ footer {
   </div>
 </section>
 
-<!-- Leadership / Team Section -->
-<section class="section" id="team" style="margin: top 10px;">
-  <h2>Our Leadership Team</h2>
-  <p>Meet the experts guiding BEFAST Healthcare Consultancy Services towards impactful and sustainable healthcare transformation.</p>
-
-  <div class="services" style="margin-top:30px;">
-    <div class="service-card" style="text-align:center;">
-      <img src="https://via.placeholder.com/120" alt="Leader Photo" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
-      <h3>Dr. ABC Name</h3>
-      <p style="color:#475569; font-size:14px;">Founder & Chief Healthcare Strategist</p>
-      <p style="font-size:14px; color:#475569; margin-top:10px;">Expert in health policy, government partnerships, public health programs, and strategic health system planning.</p>
-    </div>
-
-    <div class="service-card" style="text-align:center;">
-      <img src="https://via.placeholder.com/120" alt="Leader Photo" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
-      <h3>Mr. XYZ Name</h3>
-      <p style="color:#475569; font-size:14px;">Operations & Training Director</p>
-      <p style="font-size:14px; color:#475569; margin-top:10px;">Specialist in healthcare operations, staff training, quality standards, and public–private healthcare models.</p>
-    </div>
-
-    <div class="service-card" style="text-align:center;">
-      <img src="https://via.placeholder.com/120" alt="Leader Photo" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
-      <h3>Ms. PQR Name</h3>
-      <p style="color:#475569; font-size:14px;">Research & Innovation Lead</p>
-      <p style="font-size:14px; color:#475569; margin-top:10px;">Expert in healthcare research, data-driven systems, innovation projects, and outcome-based program design.</p>
-    </div>
-  </div>
-</section>
 
 <!-- Testimonials Section -->
 <section class="section" id="testimonials" style="margin-top:40px;">
@@ -391,15 +448,16 @@ footer {
       <p>
         <strong>Address:</strong><br>
         BEFAST Health Care<br>
-        Bengaluru, Karnataka – 5600XX<br>
+        Rashi Nilaya, Chikkasandra, Jalahalli West,<br>
+        Bengaluru, Karnataka 560057<br>
         India
       </p>
 
-      <p style="margin-top: 15px;"><strong>Phone:</strong><br> +91 XXXXXXXXXX</p>
-      <p style="margin-top: 15px;"><strong>Email:</strong><br> contact@befasthealthcare.in</p>
+      <p style="margin-top: 15px;"><strong>Phone:</strong><br> +91 9353398979</p>
+      <p style="margin-top: 15px;"><strong>Email:</strong><br> bfasthealthcare@gmail.com</p>
       <p style="margin-top: 15px;"><strong>Working Hours:</strong><br> Mon–Sat: 9:00 AM – 7:00 PM</p>
 
-      <a href="https://wa.me/919876543210" target="_blank" 
+      <a href="https://wa.me/919353398979" target="_blank" 
         style="margin-top: 20px; display: inline-block; background: #25d366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none;">
         💬 Chat on WhatsApp
       </a>
@@ -417,6 +475,14 @@ footer {
 <footer>
   © 2025 BEFAST Healthcare Clinic — All rights reserved
 </footer>
+<a href="https://wa.me/91935338979" 
+   class="whatsapp-float" 
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+       alt="WhatsApp" class="whatsapp-icon">
+</a>
+
 
 </body>
 </html>
